@@ -1,0 +1,28 @@
+//
+//  BSBDJ.pch
+//  BSBDJ
+//
+//  Created by ma c on 16/8/27.
+//  Copyright © 2016年 shifei. All rights reserved.
+//
+
+#define SFScreenBounds [UIScreen mainScreen].bounds
+#define SFScreenWidth SFScreenBounds.size.width
+#define SFKeyWindow [UIApplication sharedApplication].keyWindow
+#define SFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1];
+
+#import "UIView+SFFrame.h"
+
+#ifdef DEBUG  // 调试
+
+#define SFLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define SFLog(...)
+
+#endif
+
+
+// 自动提示宏
+#define keyPath(objc,keyPath) @(((void)objc.keyPath,#keyPath))
