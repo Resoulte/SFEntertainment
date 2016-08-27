@@ -11,12 +11,12 @@
 @interface UIView (SFFrame)
 
 
-// @property 如果在分类里只会生成setter和getter方法的声明，不会生成成员属性
+// @property 如果在分类里只会生成setter和getter方法的声明，不会生成带有下划线成员属性
 @property (assign, nonatomic) CGFloat height;
 @property (assign, nonatomic) CGFloat width;
 @property (assign, nonatomic) CGFloat x;
 @property (assign, nonatomic) CGFloat y;
-
+@property (assign, nonatomic) CGSize size;
 @property (assign, nonatomic) CGFloat centerX;
 @property (assign, nonatomic) CGFloat centerY;
 

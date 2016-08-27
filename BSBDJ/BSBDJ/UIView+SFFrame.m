@@ -74,4 +74,16 @@
     self.center = center;
 }
 
+- (CGSize)size {
+
+    return self.frame.size;
+}
+
+- (void)setSize:(CGSize)size {
+
+    CGRect rect = self.frame;
+    rect.size = size;
+    self.frame = rect;
+}
+
 @end

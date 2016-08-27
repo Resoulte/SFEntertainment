@@ -31,13 +31,13 @@
     [self viewController:[[BSEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
     // 最新
-    [self viewController:[[BSEssenceViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self viewController:[[BSNewViewController alloc] init] title:@"最新" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
     // 关注
-    [self viewController:[[BSEssenceViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self viewController:[[BSFriendTrendsViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
     // 我
-    [self viewController:[[BSEssenceViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self viewController:[[BSMeViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     
     // tabBar是只读的，不能直接拿到换成自定义的，就要使用kvc
@@ -49,12 +49,16 @@
 
 /**设置各个界面控制器*/
 - (void)viewController:(UIViewController *)viewController title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
-
+    
     viewController.tabBarItem.title =title;
     viewController.tabBarItem.image = [UIImage imageNamed:image];
     viewController.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     
-    [self addChildViewController:viewController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    viewController.title = title;
+    
+    [self addChildViewController:nav];
     
 }
 
