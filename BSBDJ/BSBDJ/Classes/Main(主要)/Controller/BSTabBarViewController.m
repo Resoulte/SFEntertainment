@@ -13,6 +13,7 @@
 #import "BSNewViewController.h"
 #import "BSPublishViewController.h"
 #import "BSTabBar.h"
+#import "BSNavViewController.h"
 
 @interface BSTabBarViewController ()
 
@@ -54,7 +55,7 @@
     viewController.tabBarItem.image = [UIImage imageNamed:image];
     viewController.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *nav = [[BSNavViewController alloc] initWithRootViewController:viewController];
     
     viewController.title = title;
     

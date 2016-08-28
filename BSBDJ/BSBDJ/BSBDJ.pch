@@ -10,6 +10,8 @@
 #define SFScreenWidth SFScreenBounds.size.width
 #define SFKeyWindow [UIApplication sharedApplication].keyWindow
 #define SFColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1];
+#define SFMainColor SFColor(234, 234, 234)
+
 #define SFLOGFUNC SFLog(@"%s", __func__)
 
 #import "UIView+SFFrame.h"
