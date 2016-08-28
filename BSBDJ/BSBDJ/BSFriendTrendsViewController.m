@@ -21,13 +21,7 @@
 //    self.title = @"我的关注"; // 连下面的tabbar一起改
     
     // 设置leftBarButtonItem
-    UIButton *friendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [friendBtn setBackgroundImage:[UIImage imageNamed:@"cellFollowIcon"] forState:UIControlStateNormal];
-    [friendBtn setBackgroundImage:[UIImage imageNamed:@"cellFollowClickIcon"] forState:UIControlStateHighlighted];
-    friendBtn.size = friendBtn.currentBackgroundImage.size;
-    [friendBtn addTarget:self action:@selector(friendBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:friendBtn];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"cellFollowIcon" highlighted:@"cellFollowClickIcon" target:self action:@selector(friendBtnClick)];
 }
 
 - (void)friendBtnClick {

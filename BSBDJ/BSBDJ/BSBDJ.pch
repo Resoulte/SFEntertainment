@@ -13,6 +13,7 @@
 #define SFLOGFUNC SFLog(@"%s", __func__)
 
 #import "UIView+SFFrame.h"
+#import "UIBarButtonItem+SFExtension.h"
 
 #ifdef DEBUG  // 调试
 

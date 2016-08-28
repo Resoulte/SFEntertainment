@@ -21,12 +21,8 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
     
     // 设置leftBarButtonItem
-    UIButton *newBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [newBtn setBackgroundImage:[UIImage imageNamed:@"MainTagSubIcon"] forState:UIControlStateNormal];
-    [newBtn setBackgroundImage:[UIImage imageNamed:@"MainTagSubIconClick"] forState:UIControlStateHighlighted];
-    newBtn.size = newBtn.currentBackgroundImage.size;
-    [newBtn addTarget:self action:@selector(newClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:newBtn];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highlighted:@"MainTagSubIconClick" target:self action:@selector(newClick)];
+    
 }
 
 - (void)newClick {
