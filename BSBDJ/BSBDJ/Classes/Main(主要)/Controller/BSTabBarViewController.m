@@ -21,12 +21,16 @@
 
 @implementation BSTabBarViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
++ (void)initialize {
+
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor darkGrayColor]} forState:UIControlStateSelected];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     // 精华
     [self viewController:[[BSEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];

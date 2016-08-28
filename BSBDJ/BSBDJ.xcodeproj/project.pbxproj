@@ -27,6 +27,7 @@
 		04DE59E91D72AB6C003F44F1 /* SFHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59E11D72AB6C003F44F1 /* SFHttpTools.m */; };
 		04DE59EA1D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59E41D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m */; };
 		04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */; };
+		04DE59F21D72BBA7003F44F1 /* BSRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */; };
 		2722BA435B0AEA7DD11AE684 /* libPods-BSBDJ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E09233A5DAE173D8B842E /* libPods-BSBDJ.a */; };
 		8168248E2A17A526BB674846 /* libPods-BSBDJTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F32B21C0CE377F202E3B587D /* libPods-BSBDJTests.a */; };
 		ACC03D0E917F598E892EDB20 /* libPods-BSBDJUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4167B69518EF5DC6BA4FC45 /* libPods-BSBDJUITests.a */; };
@@ -93,6 +94,8 @@
 		04DE59E41D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SFSDWebImage.m"; sourceTree = "<group>"; };
 		04DE59E61D72AB6C003F44F1 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		04DE59F01D72BBA7003F44F1 /* BSRecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendController.h; sourceTree = "<group>"; };
+		04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendController.m; sourceTree = "<group>"; };
 		49901D1BDFAE4102B4D89356 /* Pods-BSBDJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4A4EFA5EDCD863F84F0A48 /* Pods-BSBDJTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B26A2CD35684E8FBDA9F16F /* Pods-BSBDJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJ/Pods-BSBDJ.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 		04DE59981D729318003F44F1 /* FrirendTrends(关注) */ = {
 			isa = PBXGroup;
 			children = (
+				04DE59EC1D72BB77003F44F1 /* Recommend(推荐关注) */,
 				04DE59991D729318003F44F1 /* Controller */,
 				04DE599C1D729318003F44F1 /* Model */,
 				04DE599D1D729318003F44F1 /* View */,
@@ -467,6 +471,39 @@
 				04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		04DE59EC1D72BB77003F44F1 /* Recommend(推荐关注) */ = {
+			isa = PBXGroup;
+			children = (
+				04DE59ED1D72BB77003F44F1 /* Controller */,
+				04DE59EE1D72BB77003F44F1 /* Model */,
+				04DE59EF1D72BB77003F44F1 /* View */,
+			);
+			path = "Recommend(推荐关注)";
+			sourceTree = "<group>";
+		};
+		04DE59ED1D72BB77003F44F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DE59F01D72BBA7003F44F1 /* BSRecommendController.h */,
+				04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DE59EE1D72BB77003F44F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DE59EF1D72BB77003F44F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		15B18D55E6412105DC934539 /* Pods */ = {
@@ -766,6 +803,7 @@
 				04DE59C61D729318003F44F1 /* BSPublishViewController.m in Sources */,
 				04DE59C51D729318003F44F1 /* UIView+SFFrame.m in Sources */,
 				04DE59BF1D729318003F44F1 /* BSFriendTrendsViewController.m in Sources */,
+				04DE59F21D72BBA7003F44F1 /* BSRecommendController.m in Sources */,
 				04DE58FE1D717D88003F44F1 /* main.m in Sources */,
 				04DE59C31D729318003F44F1 /* BSNewViewController.m in Sources */,
 				04DE59BE1D729318003F44F1 /* BSEssenceViewController.m in Sources */,
