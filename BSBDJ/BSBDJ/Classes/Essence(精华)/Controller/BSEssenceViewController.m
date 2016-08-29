@@ -65,7 +65,7 @@
     self.headerView = headerView;
     // 方法2
 //    headerView.sf_y = 64;
-    headerView.backgroundColor = SFColor(243, 240, 237);
+    headerView.backgroundColor = SFColor_A(243, 240, 237, 0.6);
     [self.view addSubview:headerView];
     
     // 底部红色指示器
@@ -197,12 +197,18 @@
     // 取出子控制器
     UITableViewController *vc = self.childViewControllers[index];
     vc.view.sf_x = scrollView.contentOffset.x;
+    // 控制器的y值默认是20
     vc.view.sf_y = 0;
+    // 设置控制器view的高度是整个屏幕的高度
+    vc.view.sf_height = scrollView.sf_height;
     
     // 设置内边距
     CGFloat top = CGRectGetMaxY(self.headerView.frame);
     CGFloat bottom = self.tabBarController.tabBar.sf_height;
     vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    
+    // 设置滚动条的内边距
+    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
     
     [scrollView addSubview:vc.view];
 
