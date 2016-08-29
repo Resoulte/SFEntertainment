@@ -1,18 +1,21 @@
 //
-//  BSEssenceImageController.m
+//  BSEssenceWordController.m
 //  BSBDJ
 //
 //  Created by ma c on 16/8/29.
 //  Copyright © 2016年 shifei. All rights reserved.
 //
 
-#import "BSEssenceImageController.h"
+#import "BSEssenceWordController.h"
 
-@interface BSEssenceImageController ()
+@interface BSEssenceWordController ()
+
+/**帖子数据*/
+@property (strong, nonatomic) NSArray *topicsArray;
 
 @end
 
-@implementation BSEssenceImageController
+@implementation BSEssenceWordController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +25,25 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // 段子网络请求
+    [self requestHttp];
+}
+
+- (void)requestHttp {
+    
+    [SFHttpTools getWithPath:@"api/api_open.php" params:@{@"a" : @"list", @"c" : @"data", @"type" : @"29"} success:^(id json) {
+        
+        self.topicsArray = json[@"list"];
+        
+        // 生成plist文件便于观察
+        [json writeToFile:@"/Users/mac/Desktop/topics.plist" atomically:YES];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 50;
+    return self.topicsArray.count;
 }
 
 
@@ -43,12 +65,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@--%ld", [self class], indexPath.row];
+    NSDictionary *topics = self.topicsArray[indexPath.row];
+    cell.textLabel.text = topics[@"name"];
+    cell.detailTextLabel.text = topics[@"text"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topics[@"profile_image"]]];
     
     
     return cell;
 }
-
 
 
 /*

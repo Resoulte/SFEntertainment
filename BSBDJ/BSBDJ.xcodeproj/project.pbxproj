@@ -40,6 +40,7 @@
 		04DE5A0F1D745B96003F44F1 /* BSEssenceVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A0E1D745B96003F44F1 /* BSEssenceVideoController.m */; };
 		04DE5A121D745BAE003F44F1 /* BSEssenceImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */; };
 		04DE5A151D745CE5003F44F1 /* BSEssenceVoiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */; };
+		04DE5A181D747146003F44F1 /* BSEssenceWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A171D747146003F44F1 /* BSEssenceWordController.m */; };
 		2722BA435B0AEA7DD11AE684 /* libPods-BSBDJ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E09233A5DAE173D8B842E /* libPods-BSBDJ.a */; };
 		8168248E2A17A526BB674846 /* libPods-BSBDJTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F32B21C0CE377F202E3B587D /* libPods-BSBDJTests.a */; };
 		ACC03D0E917F598E892EDB20 /* libPods-BSBDJUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4167B69518EF5DC6BA4FC45 /* libPods-BSBDJUITests.a */; };
@@ -128,6 +129,8 @@
 		04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceImageController.m; sourceTree = "<group>"; };
 		04DE5A131D745CE5003F44F1 /* BSEssenceVoiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceVoiceController.h; sourceTree = "<group>"; };
 		04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceVoiceController.m; sourceTree = "<group>"; };
+		04DE5A161D747146003F44F1 /* BSEssenceWordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceWordController.h; sourceTree = "<group>"; };
+		04DE5A171D747146003F44F1 /* BSEssenceWordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceWordController.m; sourceTree = "<group>"; };
 		49901D1BDFAE4102B4D89356 /* Pods-BSBDJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4A4EFA5EDCD863F84F0A48 /* Pods-BSBDJTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B26A2CD35684E8FBDA9F16F /* Pods-BSBDJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJ/Pods-BSBDJ.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				04DE5A0E1D745B96003F44F1 /* BSEssenceVideoController.m */,
 				04DE5A101D745BAE003F44F1 /* BSEssenceImageController.h */,
 				04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */,
+				04DE5A161D747146003F44F1 /* BSEssenceWordController.h */,
+				04DE5A171D747146003F44F1 /* BSEssenceWordController.m */,
 				04DE5A131D745CE5003F44F1 /* BSEssenceVoiceController.h */,
 				04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */,
 			);
@@ -856,6 +861,7 @@
 				04DE59F41D72C706003F44F1 /* Foundation+Log.m in Sources */,
 				04DE59FD1D732F1F003F44F1 /* BSCategoryCell.m in Sources */,
 				04DE59E81D72AB6C003F44F1 /* SFBaseViewController.m in Sources */,
+				04DE5A181D747146003F44F1 /* BSEssenceWordController.m in Sources */,
 				04DE59C41D729318003F44F1 /* UIBarButtonItem+SFExtension.m in Sources */,
 				04DE59E91D72AB6C003F44F1 /* SFHttpTools.m in Sources */,
 				04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */,
