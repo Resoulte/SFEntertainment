@@ -16,6 +16,8 @@
 
 #import "UIView+SFFrame.h"
 #import "UIBarButtonItem+SFExtension.h"
+#import <YYModel.h>
+#import "UIImageView+SFSDWebImage.h"
 
 #ifdef DEBUG  // 调试
 

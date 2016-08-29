@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SFMainColor;
     self.navigationItem.title = @"我的关注";
 //    self.title = @"我的关注"; // 连下面的tabbar一起改
     
@@ -31,7 +30,6 @@
     BSRecommendController *recommend = [[BSRecommendController alloc] init];
     
     [self.navigationController pushViewController:recommend animated:YES];
-    
 }
 
 

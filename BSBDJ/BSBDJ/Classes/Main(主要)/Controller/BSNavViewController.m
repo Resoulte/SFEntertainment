@@ -34,7 +34,7 @@
         viewController.hidesBottomBarWhenPushed = YES;
         
         UIButton *buttonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        buttonItem.size = CGSizeMake(70, 20);
+        buttonItem.sf_size = CGSizeMake(70, 20);
 //        buttonItem.backgroundColor = [UIColor redColor];
 //        [buttonItem sizeToFit];
         

@@ -9,7 +9,7 @@
 #import "SFHttpTools.h"
 #import <AFNetworking.h>
 
-static NSString *kBaseUrl = @"http://123.57.141.249:8080/beautalk/";
+static NSString *kBaseUrl = @"http://api.budejie.com/";
 @interface AFHTTPClient : AFHTTPSessionManager
 
 + (instancetype)sharedClient;

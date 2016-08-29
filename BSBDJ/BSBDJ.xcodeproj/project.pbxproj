@@ -28,6 +28,18 @@
 		04DE59EA1D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59E41D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m */; };
 		04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */; };
 		04DE59F21D72BBA7003F44F1 /* BSRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */; };
+		04DE59F41D72C706003F44F1 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59F31D72C706003F44F1 /* Foundation+Log.m */; };
+		04DE59F71D72C79A003F44F1 /* BSRecommendItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59F61D72C799003F44F1 /* BSRecommendItem.m */; };
+		04DE59F91D72C857003F44F1 /* BSRecommendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59F81D72C857003F44F1 /* BSRecommendController.xib */; };
+		04DE59FD1D732F1F003F44F1 /* BSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59FB1D732F1F003F44F1 /* BSCategoryCell.m */; };
+		04DE59FE1D732F1F003F44F1 /* BSCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59FC1D732F1F003F44F1 /* BSCategoryCell.xib */; };
+		04DE5A051D73D13F003F44F1 /* BSUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A031D73D13F003F44F1 /* BSUserTableViewCell.m */; };
+		04DE5A061D73D13F003F44F1 /* BSUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DE5A041D73D13F003F44F1 /* BSUserTableViewCell.xib */; };
+		04DE5A091D73D413003F44F1 /* BSUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A081D73D413003F44F1 /* BSUserItem.m */; };
+		04DE5A0C1D745B77003F44F1 /* BSEssenceAllController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A0B1D745B77003F44F1 /* BSEssenceAllController.m */; };
+		04DE5A0F1D745B96003F44F1 /* BSEssenceVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A0E1D745B96003F44F1 /* BSEssenceVideoController.m */; };
+		04DE5A121D745BAE003F44F1 /* BSEssenceImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */; };
+		04DE5A151D745CE5003F44F1 /* BSEssenceVoiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */; };
 		2722BA435B0AEA7DD11AE684 /* libPods-BSBDJ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E09233A5DAE173D8B842E /* libPods-BSBDJ.a */; };
 		8168248E2A17A526BB674846 /* libPods-BSBDJTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F32B21C0CE377F202E3B587D /* libPods-BSBDJTests.a */; };
 		ACC03D0E917F598E892EDB20 /* libPods-BSBDJUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4167B69518EF5DC6BA4FC45 /* libPods-BSBDJUITests.a */; };
@@ -96,6 +108,26 @@
 		04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		04DE59F01D72BBA7003F44F1 /* BSRecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendController.h; sourceTree = "<group>"; };
 		04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendController.m; sourceTree = "<group>"; };
+		04DE59F31D72C706003F44F1 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		04DE59F51D72C799003F44F1 /* BSRecommendItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendItem.h; sourceTree = "<group>"; };
+		04DE59F61D72C799003F44F1 /* BSRecommendItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendItem.m; sourceTree = "<group>"; };
+		04DE59F81D72C857003F44F1 /* BSRecommendController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRecommendController.xib; sourceTree = "<group>"; };
+		04DE59FA1D732F1F003F44F1 /* BSCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCategoryCell.h; sourceTree = "<group>"; };
+		04DE59FB1D732F1F003F44F1 /* BSCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCategoryCell.m; sourceTree = "<group>"; };
+		04DE59FC1D732F1F003F44F1 /* BSCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSCategoryCell.xib; sourceTree = "<group>"; };
+		04DE5A021D73D13F003F44F1 /* BSUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserTableViewCell.h; sourceTree = "<group>"; };
+		04DE5A031D73D13F003F44F1 /* BSUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserTableViewCell.m; sourceTree = "<group>"; };
+		04DE5A041D73D13F003F44F1 /* BSUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserTableViewCell.xib; sourceTree = "<group>"; };
+		04DE5A071D73D413003F44F1 /* BSUserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserItem.h; sourceTree = "<group>"; };
+		04DE5A081D73D413003F44F1 /* BSUserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserItem.m; sourceTree = "<group>"; };
+		04DE5A0A1D745B76003F44F1 /* BSEssenceAllController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceAllController.h; sourceTree = "<group>"; };
+		04DE5A0B1D745B77003F44F1 /* BSEssenceAllController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceAllController.m; sourceTree = "<group>"; };
+		04DE5A0D1D745B96003F44F1 /* BSEssenceVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceVideoController.h; sourceTree = "<group>"; };
+		04DE5A0E1D745B96003F44F1 /* BSEssenceVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceVideoController.m; sourceTree = "<group>"; };
+		04DE5A101D745BAE003F44F1 /* BSEssenceImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceImageController.h; sourceTree = "<group>"; };
+		04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceImageController.m; sourceTree = "<group>"; };
+		04DE5A131D745CE5003F44F1 /* BSEssenceVoiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceVoiceController.h; sourceTree = "<group>"; };
+		04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceVoiceController.m; sourceTree = "<group>"; };
 		49901D1BDFAE4102B4D89356 /* Pods-BSBDJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4A4EFA5EDCD863F84F0A48 /* Pods-BSBDJTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJTests/Pods-BSBDJTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B26A2CD35684E8FBDA9F16F /* Pods-BSBDJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBDJ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBDJ/Pods-BSBDJ.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +257,14 @@
 			children = (
 				04DE59941D729318003F44F1 /* BSEssenceViewController.h */,
 				04DE59951D729318003F44F1 /* BSEssenceViewController.m */,
+				04DE5A0A1D745B76003F44F1 /* BSEssenceAllController.h */,
+				04DE5A0B1D745B77003F44F1 /* BSEssenceAllController.m */,
+				04DE5A0D1D745B96003F44F1 /* BSEssenceVideoController.h */,
+				04DE5A0E1D745B96003F44F1 /* BSEssenceVideoController.m */,
+				04DE5A101D745BAE003F44F1 /* BSEssenceImageController.h */,
+				04DE5A111D745BAE003F44F1 /* BSEssenceImageController.m */,
+				04DE5A131D745CE5003F44F1 /* BSEssenceVoiceController.h */,
+				04DE5A141D745CE5003F44F1 /* BSEssenceVoiceController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,8 +424,9 @@
 		04DE59B21D729318003F44F1 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
-				04DE59DC1D72AB6C003F44F1 /* Tools */,
 				04DE59B31D729318003F44F1 /* Category */,
+				04DE59DC1D72AB6C003F44F1 /* Tools */,
+				04DE59F31D72C706003F44F1 /* Foundation+Log.m */,
 			);
 			path = "Other(其他)";
 			sourceTree = "<group>";
@@ -488,6 +529,7 @@
 			children = (
 				04DE59F01D72BBA7003F44F1 /* BSRecommendController.h */,
 				04DE59F11D72BBA7003F44F1 /* BSRecommendController.m */,
+				04DE59F81D72C857003F44F1 /* BSRecommendController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -495,6 +537,10 @@
 		04DE59EE1D72BB77003F44F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04DE59F51D72C799003F44F1 /* BSRecommendItem.h */,
+				04DE59F61D72C799003F44F1 /* BSRecommendItem.m */,
+				04DE5A071D73D413003F44F1 /* BSUserItem.h */,
+				04DE5A081D73D413003F44F1 /* BSUserItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +548,12 @@
 		04DE59EF1D72BB77003F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04DE59FA1D732F1F003F44F1 /* BSCategoryCell.h */,
+				04DE59FB1D732F1F003F44F1 /* BSCategoryCell.m */,
+				04DE59FC1D732F1F003F44F1 /* BSCategoryCell.xib */,
+				04DE5A021D73D13F003F44F1 /* BSUserTableViewCell.h */,
+				04DE5A031D73D13F003F44F1 /* BSUserTableViewCell.m */,
+				04DE5A041D73D13F003F44F1 /* BSUserTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +694,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DE59CB1D7294C2003F44F1 /* BSFriendTrendsViewController.xib in Resources */,
+				04DE59F91D72C857003F44F1 /* BSRecommendController.xib in Resources */,
+				04DE5A061D73D13F003F44F1 /* BSUserTableViewCell.xib in Resources */,
+				04DE59FE1D732F1F003F44F1 /* BSCategoryCell.xib in Resources */,
 				04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,20 +848,29 @@
 				04DE59EA1D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m in Sources */,
 				04DE59C11D729318003F44F1 /* BSTabBar.m in Sources */,
 				04DE59C01D729318003F44F1 /* BSTabBarViewController.m in Sources */,
+				04DE5A0F1D745B96003F44F1 /* BSEssenceVideoController.m in Sources */,
+				04DE5A151D745CE5003F44F1 /* BSEssenceVoiceController.m in Sources */,
 				04DE59C21D729318003F44F1 /* BSMeViewController.m in Sources */,
+				04DE5A0C1D745B77003F44F1 /* BSEssenceAllController.m in Sources */,
 				04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */,
+				04DE59F41D72C706003F44F1 /* Foundation+Log.m in Sources */,
+				04DE59FD1D732F1F003F44F1 /* BSCategoryCell.m in Sources */,
 				04DE59E81D72AB6C003F44F1 /* SFBaseViewController.m in Sources */,
 				04DE59C41D729318003F44F1 /* UIBarButtonItem+SFExtension.m in Sources */,
 				04DE59E91D72AB6C003F44F1 /* SFHttpTools.m in Sources */,
 				04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */,
 				04DE59C91D729465003F44F1 /* BSNavViewController.m in Sources */,
+				04DE5A091D73D413003F44F1 /* BSUserItem.m in Sources */,
+				04DE5A121D745BAE003F44F1 /* BSEssenceImageController.m in Sources */,
 				04DE59C61D729318003F44F1 /* BSPublishViewController.m in Sources */,
 				04DE59C51D729318003F44F1 /* UIView+SFFrame.m in Sources */,
 				04DE59BF1D729318003F44F1 /* BSFriendTrendsViewController.m in Sources */,
 				04DE59F21D72BBA7003F44F1 /* BSRecommendController.m in Sources */,
+				04DE59F71D72C79A003F44F1 /* BSRecommendItem.m in Sources */,
 				04DE58FE1D717D88003F44F1 /* main.m in Sources */,
 				04DE59C31D729318003F44F1 /* BSNewViewController.m in Sources */,
 				04DE59BE1D729318003F44F1 /* BSEssenceViewController.m in Sources */,
+				04DE5A051D73D13F003F44F1 /* BSUserTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

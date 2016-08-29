@@ -30,12 +30,12 @@
     [super layoutSubviews];
     
     _publishBtn.frame = CGRectMake(0, 0 , _publishBtn.currentBackgroundImage.size.width, _publishBtn.currentBackgroundImage.size.height);
-    _publishBtn.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+    _publishBtn.center = CGPointMake(self.sf_width * 0.5, self.sf_height * 0.5);
     
     
     CGFloat buttonY = 0;
-    CGFloat buttonW = self.width / 5;
-    CGFloat buttonH = self.height;
+    CGFloat buttonW = self.sf_width / 5;
+    CGFloat buttonH = self.sf_height ;
     NSInteger index = 0;
     
     for (UIView *btn in self.subviews) {
