@@ -144,7 +144,9 @@ static NSString *const  ID1 = @"user";
         
         // 默认选中首行
         [self.categoryTablview selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-
+        
+        // 让用户进入上拉刷新状态
+        [self.categoryRecommendTabView.mj_header beginRefreshing];
         
     } failure:^(NSError *error) {
         
