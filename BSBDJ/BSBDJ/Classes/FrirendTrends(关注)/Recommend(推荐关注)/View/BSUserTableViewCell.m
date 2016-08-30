@@ -26,6 +26,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+     self.backgroundColor = SFColor(244, 244, 244);
+    
 }
 
 - (void)setUserItem:(BSUserItem *)userItem {
@@ -33,7 +35,16 @@
     _userItem = userItem;
     [self.header sd_setImageWithURL:[NSURL URLWithString:userItem.header]];
     self.screen_name.text = userItem.screen_name;
-    self.fans_count.text  = [NSString stringWithFormat:@"%ld人", userItem.fans_count];
+    
+    if (userItem.fans_count < 10000) {
+        
+        self.fans_count.text  = [NSString stringWithFormat:@"%ld人", userItem.fans_count];
+    } else {
+        NSString *fans = [NSString stringWithFormat:@"%zd万人", userItem.fans_count / 10000];
+        self.fans_count.text = fans;
+    }
+
+
     
     
     

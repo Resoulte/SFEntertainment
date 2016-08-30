@@ -20,6 +20,7 @@
 #import <YYModel.h>
 #import "UIImageView+SFSDWebImage.h"
 #import "SFHttpTools.h"
+#import <MJRefresh.h>
 
 #ifdef DEBUG  // 调试
 

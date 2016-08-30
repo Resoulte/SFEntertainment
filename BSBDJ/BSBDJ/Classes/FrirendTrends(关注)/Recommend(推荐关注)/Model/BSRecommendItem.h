@@ -17,4 +17,7 @@
 /**id*/
 @property (assign, nonatomic) NSInteger id;
 
+
+/**这个类别所对应的数据*/
+@property (strong, nonatomic) NSMutableArray *users;
 @end

@@ -8,6 +8,7 @@
 
 #import "BSRecommendController.h"
 #import "BSRecommendItem.h"
+#import "BSUserItem.h"
 #import "BSCategoryCell.h"
 #import "BSUserTableViewCell.h"
 
@@ -18,8 +19,6 @@
 @property (strong, nonatomic) NSArray *categoryArray;
 /**右边的tablView*/
 @property (weak, nonatomic) IBOutlet UITableView *categoryRecommendTabView;
-/**右边的数据数组*/
-@property (strong, nonatomic) NSMutableArray *recommendArray;
 /**BSCategoryCell*/
 @property (strong, nonatomic) BSCategoryCell *categoryCell;
 /**BSUserTableViewCell*/
@@ -42,25 +41,33 @@ static NSString *const  ID1 = @"user";
     [self.categoryTablview registerNib:[UINib nibWithNibName:NSStringFromClass([BSCategoryCell class]) bundle:nil] forCellReuseIdentifier:ID];
     [self.categoryRecommendTabView registerNib:[UINib nibWithNibName:NSStringFromClass([BSUserTableViewCell class]) bundle:nil] forCellReuseIdentifier:ID1];
     
+    self.categoryRecommendTabView.rowHeight = 70;
+    // 设置inset
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.categoryTablview.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    self.categoryRecommendTabView.contentInset = self.categoryTablview.contentInset;
+    
+    
+    
 }
 
 #pragma mark - 推荐关注的左边category的网络请求
 - (void)categoryRequestHttp {
     
     [self getWithPath:@"api/api_open.php" params:@{@"a" : @"category", @"c" : @"subscribe"} success:^(id json) {
-        SFLog(@"%@", json);
+//        SFLog(@"%@", json);
         self.categoryArray = [NSArray yy_modelArrayWithClass:[BSRecommendItem class] json:json[@"list"]];
         
         // 刷新数据
         [self.categoryTablview reloadData];
+        
+        
+        // 默认选中首行
+        [self.categoryTablview selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+        
     } failure:^(NSError *error) {
         
     }];
-}
-
-#pragma mark - 推荐关注的右边的网络请求
-- (void)recommendRequestHttp {
-    
 }
 
 
@@ -68,8 +75,11 @@ static NSString *const  ID1 = @"user";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == self.categoryTablview) {
         return self.categoryArray.count;
-    } else
-        return self.recommendArray.count;
+    } else {
+        // 左边被选中的类别模型
+        BSRecommendItem *category = self.categoryArray[self.categoryTablview.indexPathForSelectedRow.row];
+        return category.users.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,11 +90,11 @@ static NSString *const  ID1 = @"user";
         return cell;
     } else {
         BSUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID1];
-        cell.userItem = self.recommendArray[indexPath.row];
-        
+        BSRecommendItem *category = self.categoryArray[self.categoryTablview.indexPathForSelectedRow.row];
+        cell.userItem = category.users[indexPath.row];
+
         return cell;
     }
-        
     
     return nil;
     
@@ -93,24 +103,39 @@ static NSString *const  ID1 = @"user";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     BSRecommendItem *category = self.categoryArray[indexPath.row];
+    
+    // 防止重复发送请求
+    if (category.users.count) {
+        // 显示曾经的数据
+        [self.categoryRecommendTabView reloadData];
+    } else {
+        // 发送请求给服务器，加载右侧的数据
 //    category.id
-    [self getWithPath:@"api/api_open.php" params:@{@"a" : @"category", @"c" : @"subscribe", @"category_id" : @(category.id)} success:^(id json) {
-        SFLog(@"%@", json);
+    [self getWithPath:@"api/api_open.php" params:@{@"a" : @"list", @"c" : @"subscribe", @"category_id" : @(category.id)} success:^(id json) {
+//        SFLog(@"%@", json[@"list"]);
+        NSArray *recommendArray = [NSArray yy_modelArrayWithClass:[BSUserItem class] json:json[@"list"]];
+        
+        // 添加到当前类别对应的用户数组
+        [category.users addObjectsFromArray:recommendArray];
+        
+        // 刷新右边表格
+        [self.categoryRecommendTabView reloadData];
     } failure:^(NSError *error) {
         
     }];
+    }
     
 }
 
 #pragma mark - setter and getter 
-- (NSMutableArray *)recommendArray {
-    
-    if (!_recommendArray) {
-        _recommendArray = [NSMutableArray array];
-    }
-    return _recommendArray;
-    
-}
+//- (NSMutableArray *)recommendArray {
+//    
+//    if (!_recommendArray) {
+//        _recommendArray = [NSMutableArray array];
+//    }
+//    return _recommendArray;
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
