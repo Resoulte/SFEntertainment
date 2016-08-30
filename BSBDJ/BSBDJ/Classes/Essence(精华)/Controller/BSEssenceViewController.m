@@ -12,6 +12,7 @@
 #import "BSEssenceImageController.h"
 #import "BSEssenceWordController.h"
 #import "BSEssenceVoiceController.h"
+#import "BSEssenceRecommendTagsController.h"
 
 @interface BSEssenceViewController () <UIScrollViewDelegate>
 /**头部标题栏*/
@@ -184,7 +185,9 @@
 
 - (void)tagClick {
 
-    SFLOGFUNC;
+    BSEssenceRecommendTagsController *tags = [[BSEssenceRecommendTagsController alloc] init];
+    
+    [self.navigationController pushViewController:tags animated:YES];
     
 }
 

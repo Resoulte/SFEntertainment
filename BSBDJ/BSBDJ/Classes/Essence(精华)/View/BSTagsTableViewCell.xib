@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagsCell" rowHeight="91" id="KGk-i7-Jjw" customClass="BSTagsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nee-43-m4S">
+                        <rect key="frame" x="10" y="20" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="7Y1-zG-8lo"/>
+                            <constraint firstAttribute="width" constant="50" id="bY1-D5-fjm"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un5-JH-zfx">
+                        <rect key="frame" x="70" y="20" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFa-mi-KC9">
+                        <rect key="frame" x="253" y="30" width="46" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="6WZ-jL-dA9"/>
+                            <constraint firstAttribute="height" constant="30" id="rMY-V6-BqC"/>
+                        </constraints>
+                        <state key="normal" title="+ 订阅">
+                            <color key="titleColor" red="1" green="0.1925514602" blue="0.1527466686" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeQ-NQ-MDo">
+                        <rect key="frame" x="70" y="49" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oFa-mi-KC9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2cW-Nx-0Ad"/>
+                    <constraint firstItem="PeQ-NQ-MDo" firstAttribute="leading" secondItem="nee-43-m4S" secondAttribute="trailing" constant="10" id="8f2-ob-bMH"/>
+                    <constraint firstItem="nee-43-m4S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KPd-D4-Urs"/>
+                    <constraint firstItem="PeQ-NQ-MDo" firstAttribute="bottom" secondItem="nee-43-m4S" secondAttribute="bottom" id="XEi-yy-yCg"/>
+                    <constraint firstItem="nee-43-m4S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ylr-Fs-bnD"/>
+                    <constraint firstItem="un5-JH-zfx" firstAttribute="top" secondItem="nee-43-m4S" secondAttribute="top" id="lHN-Zf-kkv"/>
+                    <constraint firstAttribute="trailing" secondItem="oFa-mi-KC9" secondAttribute="trailing" constant="21" id="pTQ-ym-3BP"/>
+                    <constraint firstItem="un5-JH-zfx" firstAttribute="leading" secondItem="nee-43-m4S" secondAttribute="trailing" constant="10" id="vCT-7z-vRo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImage" destination="nee-43-m4S" id="Ass-uq-lxC"/>
+                <outlet property="nameLable" destination="un5-JH-zfx" id="lWw-Vc-X11"/>
+                <outlet property="subName" destination="PeQ-NQ-MDo" id="ZUS-bE-bHp"/>
+            </connections>
+            <point key="canvasLocation" x="212" y="226.5"/>
+        </tableViewCell>
+    </objects>
+</document>
