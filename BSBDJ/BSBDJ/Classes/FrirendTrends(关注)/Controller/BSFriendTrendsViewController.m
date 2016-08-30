@@ -8,12 +8,19 @@
 
 #import "BSFriendTrendsViewController.h"
 #import "BSRecommendController.h"
+#import "BSLoginRegisterController.h"
 
 @interface BSFriendTrendsViewController ()
 
 @end
 
 @implementation BSFriendTrendsViewController
+- (IBAction)loginRegisterClick:(id)sender {
+    
+    BSLoginRegisterController *login = [[BSLoginRegisterController alloc] init];
+    
+    [self presentViewController:login animated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

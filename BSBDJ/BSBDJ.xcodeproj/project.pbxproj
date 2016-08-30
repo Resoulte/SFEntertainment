@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411D5271D748FC10052A5D7 /* BSLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D5251D748FC10052A5D7 /* BSLoginRegisterController.m */; };
+		0411D5281D748FC10052A5D7 /* BSLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411D5261D748FC10052A5D7 /* BSLoginRegisterController.xib */; };
+		0411D52E1D7525BB0052A5D7 /* BSVertialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D52D1D7525BB0052A5D7 /* BSVertialButton.m */; };
 		04DE58FE1D717D88003F44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE58FD1D717D88003F44F1 /* main.m */; };
 		04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59001D717D88003F44F1 /* AppDelegate.m */; };
 		04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59081D717D88003F44F1 /* Assets.xcassets */; };
@@ -65,6 +68,11 @@
 
 /* Begin PBXFileReference section */
 		004E09233A5DAE173D8B842E /* libPods-BSBDJ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSBDJ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0411D5241D748FC10052A5D7 /* BSLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginRegisterController.h; sourceTree = "<group>"; };
+		0411D5251D748FC10052A5D7 /* BSLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginRegisterController.m; sourceTree = "<group>"; };
+		0411D5261D748FC10052A5D7 /* BSLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLoginRegisterController.xib; sourceTree = "<group>"; };
+		0411D52C1D7525BB0052A5D7 /* BSVertialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVertialButton.h; sourceTree = "<group>"; };
+		0411D52D1D7525BB0052A5D7 /* BSVertialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVertialButton.m; sourceTree = "<group>"; };
 		04DE58F91D717D87003F44F1 /* BSBDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE58FD1D717D88003F44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DE58FF1D717D88003F44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -305,6 +313,9 @@
 				04DE599A1D729318003F44F1 /* BSFriendTrendsViewController.h */,
 				04DE599B1D729318003F44F1 /* BSFriendTrendsViewController.m */,
 				04DE59CA1D7294C2003F44F1 /* BSFriendTrendsViewController.xib */,
+				0411D5241D748FC10052A5D7 /* BSLoginRegisterController.h */,
+				0411D5251D748FC10052A5D7 /* BSLoginRegisterController.m */,
+				0411D5261D748FC10052A5D7 /* BSLoginRegisterController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -515,6 +526,8 @@
 			children = (
 				04DE59E61D72AB6C003F44F1 /* UIView+Toast.h */,
 				04DE59E71D72AB6C003F44F1 /* UIView+Toast.m */,
+				0411D52C1D7525BB0052A5D7 /* BSVertialButton.h */,
+				0411D52D1D7525BB0052A5D7 /* BSVertialButton.m */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -701,6 +714,7 @@
 				04DE59CB1D7294C2003F44F1 /* BSFriendTrendsViewController.xib in Resources */,
 				04DE59F91D72C857003F44F1 /* BSRecommendController.xib in Resources */,
 				04DE5A061D73D13F003F44F1 /* BSUserTableViewCell.xib in Resources */,
+				0411D5281D748FC10052A5D7 /* BSLoginRegisterController.xib in Resources */,
 				04DE59FE1D732F1F003F44F1 /* BSCategoryCell.xib in Resources */,
 				04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */,
 			);
@@ -855,6 +869,7 @@
 				04DE59C01D729318003F44F1 /* BSTabBarViewController.m in Sources */,
 				04DE5A0F1D745B96003F44F1 /* BSEssenceVideoController.m in Sources */,
 				04DE5A151D745CE5003F44F1 /* BSEssenceVoiceController.m in Sources */,
+				0411D5271D748FC10052A5D7 /* BSLoginRegisterController.m in Sources */,
 				04DE59C21D729318003F44F1 /* BSMeViewController.m in Sources */,
 				04DE5A0C1D745B77003F44F1 /* BSEssenceAllController.m in Sources */,
 				04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */,
@@ -862,6 +877,7 @@
 				04DE59FD1D732F1F003F44F1 /* BSCategoryCell.m in Sources */,
 				04DE59E81D72AB6C003F44F1 /* SFBaseViewController.m in Sources */,
 				04DE5A181D747146003F44F1 /* BSEssenceWordController.m in Sources */,
+				0411D52E1D7525BB0052A5D7 /* BSVertialButton.m in Sources */,
 				04DE59C41D729318003F44F1 /* UIBarButtonItem+SFExtension.m in Sources */,
 				04DE59E91D72AB6C003F44F1 /* SFHttpTools.m in Sources */,
 				04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */,
