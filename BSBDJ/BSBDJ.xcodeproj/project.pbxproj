@@ -10,6 +10,8 @@
 		0411D5271D748FC10052A5D7 /* BSLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D5251D748FC10052A5D7 /* BSLoginRegisterController.m */; };
 		0411D5281D748FC10052A5D7 /* BSLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411D5261D748FC10052A5D7 /* BSLoginRegisterController.xib */; };
 		0411D52E1D7525BB0052A5D7 /* BSVertialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D52D1D7525BB0052A5D7 /* BSVertialButton.m */; };
+		0411D5311D7546F20052A5D7 /* BSPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D5301D7546F20052A5D7 /* BSPushGuideView.m */; };
+		0411D5331D7547040052A5D7 /* BSPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411D5321D7547040052A5D7 /* BSPushGuideView.xib */; };
 		04DE58FE1D717D88003F44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE58FD1D717D88003F44F1 /* main.m */; };
 		04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59001D717D88003F44F1 /* AppDelegate.m */; };
 		04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59081D717D88003F44F1 /* Assets.xcassets */; };
@@ -73,6 +75,9 @@
 		0411D5261D748FC10052A5D7 /* BSLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLoginRegisterController.xib; sourceTree = "<group>"; };
 		0411D52C1D7525BB0052A5D7 /* BSVertialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVertialButton.h; sourceTree = "<group>"; };
 		0411D52D1D7525BB0052A5D7 /* BSVertialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVertialButton.m; sourceTree = "<group>"; };
+		0411D52F1D7546F20052A5D7 /* BSPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPushGuideView.h; sourceTree = "<group>"; };
+		0411D5301D7546F20052A5D7 /* BSPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPushGuideView.m; sourceTree = "<group>"; };
+		0411D5321D7547040052A5D7 /* BSPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSPushGuideView.xib; sourceTree = "<group>"; };
 		04DE58F91D717D87003F44F1 /* BSBDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE58FD1D717D88003F44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DE58FF1D717D88003F44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -367,6 +372,9 @@
 			children = (
 				04DE59A41D729318003F44F1 /* BSTabBar.h */,
 				04DE59A51D729318003F44F1 /* BSTabBar.m */,
+				0411D52F1D7546F20052A5D7 /* BSPushGuideView.h */,
+				0411D5301D7546F20052A5D7 /* BSPushGuideView.m */,
+				0411D5321D7547040052A5D7 /* BSPushGuideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -717,6 +725,7 @@
 				0411D5281D748FC10052A5D7 /* BSLoginRegisterController.xib in Resources */,
 				04DE59FE1D732F1F003F44F1 /* BSCategoryCell.xib in Resources */,
 				04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */,
+				0411D5331D7547040052A5D7 /* BSPushGuideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +883,7 @@
 				04DE5A0C1D745B77003F44F1 /* BSEssenceAllController.m in Sources */,
 				04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */,
 				04DE59F41D72C706003F44F1 /* Foundation+Log.m in Sources */,
+				0411D5311D7546F20052A5D7 /* BSPushGuideView.m in Sources */,
 				04DE59FD1D732F1F003F44F1 /* BSCategoryCell.m in Sources */,
 				04DE59E81D72AB6C003F44F1 /* SFBaseViewController.m in Sources */,
 				04DE5A181D747146003F44F1 /* BSEssenceWordController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BSTabBarViewController.h"
+#import "BSPushGuideView.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,9 @@
     
     [self.window makeKeyAndVisible];
     
+    
+   // 显示引导页
+    [BSPushGuideView show];
     
     return YES;
 }
