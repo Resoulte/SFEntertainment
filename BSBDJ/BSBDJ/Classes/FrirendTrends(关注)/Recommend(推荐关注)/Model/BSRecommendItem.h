@@ -20,4 +20,11 @@
 
 /**这个类别所对应的数据*/
 @property (strong, nonatomic) NSMutableArray *users;
+
+/**总数*/
+@property (assign, nonatomic) NSInteger total;
+
+// 自己加的
+/**当前页码*/
+@property (assign, nonatomic) NSInteger curentPage;
 @end
