@@ -73,7 +73,7 @@ static NSString *const  ID1 = @"user";
     // 发送请求加载更多数据
     [self getWithPath:@"api/api_open.php" params:@{@"a" : @"list", @"c" : @"subscribe", @"category_id" : @(category.id), @"page" : @(category.curentPage)} success:^(id json) {
         //        SFLog(@"%@", json[@"list"]);
-        NSArray *recommendArray = [NSArray yy_modelArrayWithClass:[BSUserItem class] json:json[@"list"]];
+        NSArray *recommendArray = [BSUserItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
         
         // 清除所有旧数据
         [category.users removeAllObjects];
@@ -111,7 +111,7 @@ static NSString *const  ID1 = @"user";
     // 发送请求加载更多数据
     [self getWithPath:@"api/api_open.php" params:@{@"a" : @"list", @"c" : @"subscribe", @"category_id" : @(category.id), @"page" : @(++category.curentPage)} success:^(id json) {
         //        SFLog(@"%@", json[@"list"]);
-        NSArray *recommendArray = [NSArray yy_modelArrayWithClass:[BSUserItem class] json:json[@"list"]];
+        NSArray *recommendArray = [BSUserItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
         
         // 添加到当前类别对应的用户数组
         [category.users addObjectsFromArray:recommendArray];
@@ -136,7 +136,7 @@ static NSString *const  ID1 = @"user";
     
     [self getWithPath:@"api/api_open.php" params:@{@"a" : @"category", @"c" : @"subscribe"} success:^(id json) {
 //        SFLog(@"%@", json);
-        self.categoryArray = [NSArray yy_modelArrayWithClass:[BSRecommendItem class] json:json[@"list"]];
+        self.categoryArray = [BSRecommendItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
         
         // 刷新数据
         [self.categoryTablview reloadData];

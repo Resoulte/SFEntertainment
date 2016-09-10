@@ -49,7 +49,7 @@ static NSString * const ID = @"tagsCell";
                              @"c" : @"topic"
                              };
     [SFHttpTools getWithPath:@"api/api_open.php" params:params success:^(id json) {
-        self.tagsArray = [NSArray yy_modelArrayWithClass:[BSTagsItem class] json:json];
+        self.tagsArray = [BSTagsItem mj_objectArrayWithKeyValuesArray:json];
         
         [self.tableView reloadData];
         

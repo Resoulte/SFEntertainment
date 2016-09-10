@@ -17,11 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setupTableView];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 添加刷新控件
+    [self setupRefresh];
+}
+
+- (void)setupTableView {
+    
+    // 设置内边距
+    // 设置的常量
+    CGFloat top = SFHeaderViewY + SFHeaderViewH;
+    CGFloat bottom = self.tabBarController.tabBar.sf_height;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    
+    // 设置滚动条的内边距
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
+}
+
+- (void)setupRefresh {
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 自动改变透明度
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView.mj_header beginRefreshing];
+    
+    // 下拉加载
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
 - (void)didReceiveMemoryWarning {

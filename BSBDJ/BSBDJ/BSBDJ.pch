@@ -17,10 +17,11 @@
 
 #import "UIView+SFFrame.h"
 #import "UIBarButtonItem+SFExtension.h"
-#import <YYModel.h>
+#import <MJExtension.h>
 #import "UIImageView+SFSDWebImage.h"
 #import "SFHttpTools.h"
 #import <MJRefresh.h>
+#import "BSConst.h"
 
 #ifdef DEBUG  // 调试
 

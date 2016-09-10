@@ -60,14 +60,18 @@
 /**设置头部标题*/
 - (void)setuopHeaderTitle {
     // 从导航栏下开始计算（方法1）
-    self.edgesForExtendedLayout = 0;
+//    self.edgesForExtendedLayout = 0;
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SFScreenWidth, 35)];
+    UIView *headerView = [[UIView alloc] init];
     self.headerView = headerView;
+    headerView.sf_width = SFScreenWidth;
+    headerView.sf_height = SFHeaderViewH; 
     // 方法2
-//    headerView.sf_y = 64;
+    headerView.sf_y = SFHeaderViewY;
     headerView.backgroundColor = SFColor_A(243, 240, 237, 0.6);
     [self.view addSubview:headerView];
+    
+    
     
     // 底部红色指示器
     UIView *redView = [[UIView alloc] init];
@@ -198,25 +202,19 @@
     NSInteger index = scrollView.contentOffset.x / SFScreenWidth;
     
     // 取出子控制器
-    UITableViewController *vc = self.childViewControllers[index];
+    UIViewController *vc = self.childViewControllers[index];
     vc.view.sf_x = scrollView.contentOffset.x;
     // 控制器的y值默认是20
     vc.view.sf_y = 0;
     // 设置控制器view的高度是整个屏幕的高度
     vc.view.sf_height = scrollView.sf_height;
     
-    // 设置内边距
-    CGFloat top = CGRectGetMaxY(self.headerView.frame);
-    CGFloat bottom = self.tabBarController.tabBar.sf_height;
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
-    
-    // 设置滚动条的内边距
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+   
     
     [scrollView addSubview:vc.view];
 
-}
-
+} 
+ 
 // 滑动时titile改变
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 

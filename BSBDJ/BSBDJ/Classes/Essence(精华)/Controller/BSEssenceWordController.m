@@ -7,11 +7,18 @@
 //
 
 #import "BSEssenceWordController.h"
+#import "BSTopicsItem.h"
 
 @interface BSEssenceWordController ()
 
 /**帖子数据*/
-@property (strong, nonatomic) NSArray *topicsArray;
+@property (strong, nonatomic) NSMutableArray *topicsArray;
+/**当前页码*/
+@property (assign, nonatomic) NSInteger page;
+/**当加载下一页数据时需要这个参数*/
+@property (copy, nonatomic) NSString *maxtime;
+/**上一次的请求参数*/
+@property (strong, nonatomic) NSDictionary *params;
 
 @end
 
@@ -20,28 +27,121 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setupTableView];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 添加刷新控件
+    [self setupRefresh];
+}
+     
+- (void)setupTableView {
     
-    // 段子网络请求
-    [self requestHttp];
+    // 设置内边距
+    // 设置的常量
+    CGFloat top = SFHeaderViewY + SFHeaderViewH;
+    CGFloat bottom = self.tabBarController.tabBar.sf_height;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    
+    // 设置滚动条的内边距
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
 }
 
-- (void)requestHttp {
+- (void)setupRefresh {
     
-    [SFHttpTools getWithPath:@"api/api_open.php" params:@{@"a" : @"list", @"c" : @"data", @"type" : @"29"} success:^(id json) {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 自动改变透明度
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView.mj_header beginRefreshing];
+    
+    // 下拉加载
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+
+- (void)loadNewData {
+    
+    
+    // 结束上拉
+    [self.tableView.mj_footer endRefreshing];
+    
+    // 参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    self.params = params;
+    
+    [SFHttpTools getWithPath:@"api/api_open.php" params:params success:^(id json) {
         
-        self.topicsArray = json[@"list"];
+        if (self.params != params) return ;
+        
+        // 存储maxtime
+        self.maxtime = json[@"info"][@"maxtime"];
+        
+        self.topicsArray = [BSTopicsItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
         
         // 生成plist文件便于观察
-        [json writeToFile:@"/Users/mac/Desktop/topics.plist" atomically:YES];
+//        [json writeToFile:@"/Users/mac/Desktop/topics.plist" atomically:YES];
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_header endRefreshing];
+        
+        // 加载成功，清空页码
+        self.page = 0;
         
     } failure:^(NSError *error) {
         
+        if (self.params != params) return ;
+        
+        [self.tableView.mj_header endRefreshing];
     }];
+    
+    
+}
+
+- (void)loadMoreData {
+    
+    // 结束下拉
+    [self.tableView.mj_header endRefreshing];
+    
+    self.page ++;
+    
+    // 参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    params[@"page"] = @(self.page);
+    params[@"maxtime"] = self.maxtime;
+    self.params = params;
+    
+    [SFHttpTools getWithPath:@"api/api_open.php" params:params success:^(id json) {
+        
+        if (self.params != params) return ;
+        
+        // 存储maxtime
+        self.maxtime = json[@"info"][@"maxtime"];
+        
+        NSArray *dataArray = [BSTopicsItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
+#warning addObjectsFromArray谨记
+        [self.topicsArray addObjectsFromArray:dataArray];
+        
+        [self.tableView reloadData];
+        
+        // 结束刷新
+        [self.tableView.mj_footer endRefreshing];
+        
+    } failure:^(NSError *error) {
+        
+        if (self.params != params) return ;
+        
+        [self.tableView.mj_footer endRefreshing];
+        
+        
+        // 加载失败，恢复页码
+        self.page --;
+    }];
+
     
     
 }
@@ -53,7 +153,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    // 检测上拉是否显示
+    self.tableView.mj_footer.hidden = (self.topicsArray.count == 0);
+    
     return self.topicsArray.count;
+    
 }
 
 
@@ -65,58 +169,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
-    NSDictionary *topics = self.topicsArray[indexPath.row];
-    cell.textLabel.text = topics[@"name"];
-    cell.detailTextLabel.text = topics[@"text"];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topics[@"profile_image"]]];
+    BSTopicsItem *topicsItem = self.topicsArray[indexPath.row];
+    cell.textLabel.text = topicsItem.name;
+    cell.detailTextLabel.text = topicsItem.text;;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topicsItem.profile_image]];
     
     
     return cell;
 }
 
+#pragma mark - setter and getter
+- (NSMutableArray *)topicsArray {
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (!_topicsArray) {
+        _topicsArray = [NSMutableArray array];
+    }
+    return _topicsArray;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

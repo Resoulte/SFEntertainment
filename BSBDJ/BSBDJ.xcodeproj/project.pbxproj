@@ -16,6 +16,8 @@
 		0411D5391D75D3B70052A5D7 /* BSTagsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D5381D75D3B70052A5D7 /* BSTagsItem.m */; };
 		0411D54D1D75DC900052A5D7 /* BSTagsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D54B1D75DC900052A5D7 /* BSTagsTableViewCell.m */; };
 		0411D54E1D75DC900052A5D7 /* BSTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411D54C1D75DC900052A5D7 /* BSTagsTableViewCell.xib */; };
+		0449392A1D82DED30058677B /* BSTopicsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 044939291D82DED30058677B /* BSTopicsItem.m */; };
+		0449392D1D8312090058677B /* BSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449392C1D8312090058677B /* BSConst.m */; };
 		04DE58FE1D717D88003F44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE58FD1D717D88003F44F1 /* main.m */; };
 		04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59001D717D88003F44F1 /* AppDelegate.m */; };
 		04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59081D717D88003F44F1 /* Assets.xcassets */; };
@@ -89,6 +91,10 @@
 		0411D54A1D75DC900052A5D7 /* BSTagsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTagsTableViewCell.h; sourceTree = "<group>"; };
 		0411D54B1D75DC900052A5D7 /* BSTagsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTagsTableViewCell.m; sourceTree = "<group>"; };
 		0411D54C1D75DC900052A5D7 /* BSTagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTagsTableViewCell.xib; sourceTree = "<group>"; };
+		044939281D82DED30058677B /* BSTopicsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTopicsItem.h; sourceTree = "<group>"; };
+		044939291D82DED30058677B /* BSTopicsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTopicsItem.m; sourceTree = "<group>"; };
+		0449392B1D8312090058677B /* BSConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSConst.h; sourceTree = "<group>"; };
+		0449392C1D8312090058677B /* BSConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSConst.m; sourceTree = "<group>"; };
 		04DE58F91D717D87003F44F1 /* BSBDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE58FD1D717D88003F44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DE58FF1D717D88003F44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -305,6 +311,8 @@
 			children = (
 				0411D5371D75D3B70052A5D7 /* BSTagsItem.h */,
 				0411D5381D75D3B70052A5D7 /* BSTagsItem.m */,
+				044939281D82DED30058677B /* BSTopicsItem.h */,
+				044939291D82DED30058677B /* BSTopicsItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -469,6 +477,8 @@
 				04DE59B31D729318003F44F1 /* Category */,
 				04DE59DC1D72AB6C003F44F1 /* Tools */,
 				04DE59F31D72C706003F44F1 /* Foundation+Log.m */,
+				0449392B1D8312090058677B /* BSConst.h */,
+				0449392C1D8312090058677B /* BSConst.m */,
 			);
 			path = "Other(其他)";
 			sourceTree = "<group>";
@@ -893,6 +903,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DE59EA1D72AB6C003F44F1 /* UIImageView+SFSDWebImage.m in Sources */,
+				0449392A1D82DED30058677B /* BSTopicsItem.m in Sources */,
 				04DE59C11D729318003F44F1 /* BSTabBar.m in Sources */,
 				04DE59C01D729318003F44F1 /* BSTabBarViewController.m in Sources */,
 				04DE5A0F1D745B96003F44F1 /* BSEssenceVideoController.m in Sources */,
@@ -910,6 +921,7 @@
 				04DE59C41D729318003F44F1 /* UIBarButtonItem+SFExtension.m in Sources */,
 				04DE59E91D72AB6C003F44F1 /* SFHttpTools.m in Sources */,
 				0411D54D1D75DC900052A5D7 /* BSTagsTableViewCell.m in Sources */,
+				0449392D1D8312090058677B /* BSConst.m in Sources */,
 				04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */,
 				04DE59C91D729465003F44F1 /* BSNavViewController.m in Sources */,
 				04DE5A091D73D413003F44F1 /* BSUserItem.m in Sources */,
