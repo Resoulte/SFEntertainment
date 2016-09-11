@@ -28,6 +28,7 @@
 /**v标识*/
 @property (weak, nonatomic) IBOutlet UIImageView *sina_v;
 
+@property (weak, nonatomic) IBOutlet UILabel *text_lable;
 
 
 @end
@@ -95,6 +96,8 @@
     [self setupButtonTitle:self.shareButton count:topicsItem.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentButton count:topicsItem.comment placeholder:@"评论"];
     
+    // 设置文字
+    self.text_lable.text = topicsItem.text;
 }
 
 - (void)setupButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder

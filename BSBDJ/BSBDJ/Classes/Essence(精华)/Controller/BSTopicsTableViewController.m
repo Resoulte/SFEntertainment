@@ -182,7 +182,19 @@ static NSString * const ID = @"topics";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 200;
+    // 取出帖子模型
+    BSTopicsItem *topics = self.topicsArray[indexPath.row];
+    
+    // 文字的y值
+    CGFloat textY = 55;
+    // 过期了
+//    [topics.text sizeWithFont:<#(UIFont *)#> constrainedToSize:<#(CGSize)#>]
+    CGFloat textH = [topics.text boundingRectWithSize:CGSizeMake(SFScreenWidth - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:13]} context:nil].size.height;
+    
+    // cell的高度
+    CGFloat cellH = textY + textH + 44 + 10 + 10;
+    
+    return cellH;
 }
 
 #pragma mark - setter and getter

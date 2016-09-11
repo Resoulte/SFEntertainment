@@ -107,9 +107,16 @@
                             <constraint firstAttribute="width" constant="17" id="IvJ-da-EGT"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYA-yk-ONh">
+                        <rect key="frame" x="20" y="55" width="290" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="p9i-ck-fT5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="80p-AG-4cH"/>
+                    <constraint firstItem="YYA-yk-ONh" firstAttribute="top" secondItem="bzK-kq-gVm" secondAttribute="bottom" constant="10" id="CeH-gr-SXq"/>
                     <constraint firstItem="whx-xj-2mK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GPb-Xp-hAE"/>
                     <constraint firstItem="6c8-qa-aKI" firstAttribute="leading" secondItem="p9i-ck-fT5" secondAttribute="trailing" constant="1" id="Jfk-nt-knk"/>
                     <constraint firstItem="6c8-qa-aKI" firstAttribute="leading" secondItem="S1F-B2-siB" secondAttribute="leading" id="Qd6-zV-HVE"/>
@@ -122,6 +129,8 @@
                     <constraint firstItem="p9i-ck-fT5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="47" id="eP1-Yv-OW2"/>
                     <constraint firstItem="S1F-B2-siB" firstAttribute="top" secondItem="bzK-kq-gVm" secondAttribute="top" id="l0S-pj-ZHm"/>
                     <constraint firstAttribute="bottom" secondItem="pvK-St-xWa" secondAttribute="bottom" id="lyX-4S-5NW"/>
+                    <constraint firstItem="YYA-yk-ONh" firstAttribute="leading" secondItem="bzK-kq-gVm" secondAttribute="leading" id="rXx-K5-NB4"/>
+                    <constraint firstItem="YYA-yk-ONh" firstAttribute="trailing" secondItem="whx-xj-2mK" secondAttribute="trailing" id="sQo-fg-ZKf"/>
                     <constraint firstItem="6c8-qa-aKI" firstAttribute="bottom" secondItem="bzK-kq-gVm" secondAttribute="bottom" id="sVe-S7-7Ay"/>
                 </constraints>
             </tableViewCellContentView>
@@ -134,6 +143,7 @@
                 <outlet property="profileImageView" destination="bzK-kq-gVm" id="0M3-83-bc6"/>
                 <outlet property="shareButton" destination="WpN-PJ-5ny" id="TSN-AN-VKZ"/>
                 <outlet property="sina_v" destination="p9i-ck-fT5" id="pYn-H6-io4"/>
+                <outlet property="text_lable" destination="YYA-yk-ONh" id="Xiq-TH-9h4"/>
             </connections>
             <point key="canvasLocation" x="338" y="394"/>
         </tableViewCell>
