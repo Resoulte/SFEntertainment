@@ -8,7 +8,13 @@
 
 #import "BSTopicsItem.h"
 
+
+
 @implementation BSTopicsItem
+
+{
+    CGFloat _cellHeight;
+}
 
 - (NSString *)create_time {
     
@@ -41,6 +47,24 @@
     } else { // 非今年
         return _create_time;
     }
+}
+
+
+
+- (CGFloat)cellHeight {
+
+    if (!_cellHeight) {
+    // 文字的y值
+    CGFloat textY = 55;
+    // 过期了
+    //    [topics.text sizeWithFont:<#(UIFont *)#> constrainedToSize:<#(CGSize)#>]
+    CGFloat textH = [self.text boundingRectWithSize:CGSizeMake(SFScreenWidth - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:13]} context:nil].size.height;
+    
+    // cell的高度
+    _cellHeight = SFTopicCellTextY + textH + SFTopicCellBottomBarH + 2 * SFTopicCellMargin;
+    
+    }
+    return _cellHeight;
 }
 
 @end

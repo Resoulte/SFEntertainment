@@ -51,11 +51,11 @@
 // 重写frame
 - (void)setFrame:(CGRect)frame {
 
-    static float margain = 10;
-    frame.origin.x = margain;
-    frame.size.width -= 2 *margain;
-    frame.size.height -= margain;
-    frame.origin.y += margain;
+    
+    frame.origin.x = SFTopicCellMargin;
+    frame.size.width -= 2 *SFTopicCellMargin;
+    frame.size.height -= SFTopicCellMargin;
+    frame.origin.y += SFTopicCellMargin;
     
     [super setFrame:frame];
 }

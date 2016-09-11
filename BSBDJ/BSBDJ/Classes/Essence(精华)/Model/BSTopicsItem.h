@@ -29,6 +29,7 @@
 /** 是否为新浪加V用户 */
 @property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
-
+/**cell的高度*/
+@property (assign, nonatomic, readonly) CGFloat cellHeight;
 
 @end
