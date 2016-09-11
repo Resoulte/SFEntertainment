@@ -18,6 +18,9 @@
 		0411D54E1D75DC900052A5D7 /* BSTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411D54C1D75DC900052A5D7 /* BSTagsTableViewCell.xib */; };
 		0449392A1D82DED30058677B /* BSTopicsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 044939291D82DED30058677B /* BSTopicsItem.m */; };
 		0449392D1D8312090058677B /* BSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449392C1D8312090058677B /* BSConst.m */; };
+		044939311D83F0870058677B /* BSTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449392F1D83F0870058677B /* BSTopicsCell.m */; };
+		044939321D83F0870058677B /* BSTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044939301D83F0870058677B /* BSTopicsCell.xib */; };
+		044939381D8531EE0058677B /* NSDate+SFDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044939371D8531EE0058677B /* NSDate+SFDate.m */; };
 		04DE58FE1D717D88003F44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE58FD1D717D88003F44F1 /* main.m */; };
 		04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59001D717D88003F44F1 /* AppDelegate.m */; };
 		04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59081D717D88003F44F1 /* Assets.xcassets */; };
@@ -95,6 +98,11 @@
 		044939291D82DED30058677B /* BSTopicsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTopicsItem.m; sourceTree = "<group>"; };
 		0449392B1D8312090058677B /* BSConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSConst.h; sourceTree = "<group>"; };
 		0449392C1D8312090058677B /* BSConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSConst.m; sourceTree = "<group>"; };
+		0449392E1D83F0870058677B /* BSTopicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTopicsCell.h; sourceTree = "<group>"; };
+		0449392F1D83F0870058677B /* BSTopicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTopicsCell.m; sourceTree = "<group>"; };
+		044939301D83F0870058677B /* BSTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTopicsCell.xib; sourceTree = "<group>"; };
+		044939361D8531EE0058677B /* NSDate+SFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SFDate.h"; sourceTree = "<group>"; };
+		044939371D8531EE0058677B /* NSDate+SFDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SFDate.m"; sourceTree = "<group>"; };
 		04DE58F91D717D87003F44F1 /* BSBDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE58FD1D717D88003F44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DE58FF1D717D88003F44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -323,6 +331,9 @@
 				0411D54A1D75DC900052A5D7 /* BSTagsTableViewCell.h */,
 				0411D54B1D75DC900052A5D7 /* BSTagsTableViewCell.m */,
 				0411D54C1D75DC900052A5D7 /* BSTagsTableViewCell.xib */,
+				0449392E1D83F0870058677B /* BSTopicsCell.h */,
+				0449392F1D83F0870058677B /* BSTopicsCell.m */,
+				044939301D83F0870058677B /* BSTopicsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,6 +501,8 @@
 				04DE59B51D729318003F44F1 /* UIBarButtonItem+SFExtension.m */,
 				04DE59B61D729318003F44F1 /* UIView+SFFrame.h */,
 				04DE59B71D729318003F44F1 /* UIView+SFFrame.m */,
+				044939361D8531EE0058677B /* NSDate+SFDate.h */,
+				044939371D8531EE0058677B /* NSDate+SFDate.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -747,6 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044939321D83F0870058677B /* BSTopicsCell.xib in Resources */,
 				04DE59CB1D7294C2003F44F1 /* BSFriendTrendsViewController.xib in Resources */,
 				04DE59F91D72C857003F44F1 /* BSRecommendController.xib in Resources */,
 				04DE5A061D73D13F003F44F1 /* BSUserTableViewCell.xib in Resources */,
@@ -926,12 +940,14 @@
 				04DE59C91D729465003F44F1 /* BSNavViewController.m in Sources */,
 				04DE5A091D73D413003F44F1 /* BSUserItem.m in Sources */,
 				0411D5361D75D16E0052A5D7 /* BSEssenceRecommendTagsController.m in Sources */,
+				044939311D83F0870058677B /* BSTopicsCell.m in Sources */,
 				04DE5A121D745BAE003F44F1 /* BSEssenceImageController.m in Sources */,
 				04DE59C61D729318003F44F1 /* BSPublishViewController.m in Sources */,
 				04DE59C51D729318003F44F1 /* UIView+SFFrame.m in Sources */,
 				04DE59BF1D729318003F44F1 /* BSFriendTrendsViewController.m in Sources */,
 				04DE59F21D72BBA7003F44F1 /* BSRecommendController.m in Sources */,
 				0411D5391D75D3B70052A5D7 /* BSTagsItem.m in Sources */,
+				044939381D8531EE0058677B /* NSDate+SFDate.m in Sources */,
 				04DE59F71D72C79A003F44F1 /* BSRecommendItem.m in Sources */,
 				04DE58FE1D717D88003F44F1 /* main.m in Sources */,
 				04DE59C31D729318003F44F1 /* BSNewViewController.m in Sources */,

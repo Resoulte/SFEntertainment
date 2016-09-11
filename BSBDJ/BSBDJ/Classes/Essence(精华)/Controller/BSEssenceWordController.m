@@ -8,6 +8,7 @@
 
 #import "BSEssenceWordController.h"
 #import "BSTopicsItem.h"
+#import "BSTopicsCell.h"
 
 @interface BSEssenceWordController ()
 
@@ -22,6 +23,8 @@
 
 @end
 
+
+static NSString * const ID = @"topics";
 @implementation BSEssenceWordController
 
 - (void)viewDidLoad {
@@ -43,6 +46,12 @@
     
     // 设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    // 注册
+    [self.tableView registerNib:[UINib nibWithNibName:@"BSTopicsCell" bundle:nil] forCellReuseIdentifier:ID];
     
 }
 
@@ -163,19 +172,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
-    }
+    BSTopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    BSTopicsItem *topicsItem = self.topicsArray[indexPath.row];
-    cell.textLabel.text = topicsItem.name;
-    cell.detailTextLabel.text = topicsItem.text;;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topicsItem.profile_image]];
-    
+    cell.topicsItem = self.topicsArray[indexPath.row];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return 200;
 }
 
 #pragma mark - setter and getter

@@ -85,11 +85,10 @@
     // 设置里面的子内容
     CGFloat titleX = 0;
     CGFloat titleY = 0;
-    CGFloat titleW = SFScreenWidth / 5;
+    CGFloat titleW = SFScreenWidth / self.childViewControllers.count;
     CGFloat titleH = headerView.sf_height;
     
-    NSArray *childTitle = @[@"全部", @"视频", @"图片", @"段子", @"声音"];
-    for (int i = 0; i < 5; i ++) {
+    for (int i = 0; i < self.childViewControllers.count; i ++) {
         
         UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         titleBtn.tag = i;
@@ -97,7 +96,8 @@
         titleX = i * titleW;
         titleBtn.frame = CGRectMake(titleX, titleY, titleW, titleH);
         SFLog(@"%@", titleBtn);
-        [titleBtn setTitle:childTitle[i] forState:UIControlStateNormal];
+        UIViewController *vc = self.childViewControllers[i];
+        [titleBtn setTitle:vc.title forState:UIControlStateNormal];
         [titleBtn layoutIfNeeded];
         [titleBtn setTitleColor:SFColor(133, 133, 133) forState:UIControlStateNormal];
         [titleBtn setTitleColor:SFColor(255, 0, 6) forState:UIControlStateSelected]; // UIControlStateDisabled];
@@ -167,19 +167,24 @@
 /**初始化子控制器*/
 - (void)setupAllChildViewController {
     
+    BSEssenceWordController *word = [[BSEssenceWordController alloc] init];
+    word.title = @"段子";
+    [self addChildViewController:word];
+    
     BSEssenceAllController *all = [[BSEssenceAllController alloc] init];
+    all.title = @"全部";
     [self addChildViewController:all];
     
     BSEssenceVideoController *video = [[BSEssenceVideoController alloc] init];
+    video.title = @"视频";
     [self addChildViewController:video];
     
     BSEssenceImageController *image = [[BSEssenceImageController alloc] init];
+    image.title = @"图片";
     [self addChildViewController:image];
     
-    BSEssenceWordController *word = [[BSEssenceWordController alloc] init];
-    [self addChildViewController:word];
-    
     BSEssenceVoiceController *voice = [[BSEssenceVoiceController alloc] init];
+    voice.title = @"声音";
     [self addChildViewController:voice];
     
     
