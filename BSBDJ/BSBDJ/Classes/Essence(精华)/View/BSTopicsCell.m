@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 /** 评论 */
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+/**v标识*/
+@property (weak, nonatomic) IBOutlet UIImageView *sina_v;
 
 
 
@@ -79,6 +81,8 @@
 #pragma mark - setter and getter
 - (void)setTopicsItem:(BSTopicsItem *)topicsItem {
     _topicsItem = topicsItem;
+    
+    self.sina_v.hidden = !topicsItem.sina_v;
     
     // 设置其他控件
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topicsItem.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
