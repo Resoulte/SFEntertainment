@@ -1,16 +1,17 @@
 //
-//  BSEssenceWordController.m
+//  BSTopicsTableViewController.m
 //  BSBDJ
 //
-//  Created by ma c on 16/8/29.
+//  Created by ma c on 16/9/11.
 //  Copyright © 2016年 shifei. All rights reserved.
 //
 
-#import "BSEssenceWordController.h"
+#import "BSTopicsTableViewController.h"
+
 #import "BSTopicsItem.h"
 #import "BSTopicsCell.h"
 
-@interface BSEssenceWordController ()
+@interface BSTopicsTableViewController ()
 
 /**帖子数据*/
 @property (strong, nonatomic) NSMutableArray *topicsArray;
@@ -25,7 +26,7 @@
 
 
 static NSString * const ID = @"topics";
-@implementation BSEssenceWordController
+@implementation BSTopicsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +36,7 @@ static NSString * const ID = @"topics";
     // 添加刷新控件
     [self setupRefresh];
 }
-     
+
 - (void)setupTableView {
     
     // 设置内边距
@@ -77,7 +78,7 @@ static NSString * const ID = @"topics";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.topicsType);
     self.params = params;
     
     [SFHttpTools getWithPath:@"api/api_open.php" params:params success:^(id json) {
@@ -90,7 +91,7 @@ static NSString * const ID = @"topics";
         self.topicsArray = [BSTopicsItem mj_objectArrayWithKeyValuesArray:json[@"list"]];
         
         // 生成plist文件便于观察
-//        [json writeToFile:@"/Users/mac/Desktop/topics.plist" atomically:YES];
+        //        [json writeToFile:@"/Users/mac/Desktop/topics.plist" atomically:YES];
         [self.tableView reloadData];
         
         [self.tableView.mj_header endRefreshing];
@@ -119,7 +120,7 @@ static NSString * const ID = @"topics";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.topicsType);
     params[@"page"] = @(self.page);
     params[@"maxtime"] = self.maxtime;
     self.params = params;
@@ -150,7 +151,7 @@ static NSString * const ID = @"topics";
         // 加载失败，恢复页码
         self.page --;
     }];
-
+    
     
     
 }
@@ -180,13 +181,13 @@ static NSString * const ID = @"topics";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     return 200;
 }
 
 #pragma mark - setter and getter
 - (NSMutableArray *)topicsArray {
-
+    
     if (!_topicsArray) {
         _topicsArray = [NSMutableArray array];
     }

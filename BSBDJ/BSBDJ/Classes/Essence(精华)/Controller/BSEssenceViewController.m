@@ -7,12 +7,8 @@
 //
 
 #import "BSEssenceViewController.h"
-#import "BSEssenceAllController.h"
-#import "BSEssenceVideoController.h"
-#import "BSEssenceImageController.h"
-#import "BSEssenceWordController.h"
-#import "BSEssenceVoiceController.h"
 #import "BSEssenceRecommendTagsController.h"
+#import "BSTopicsTableViewController.h"
 
 @interface BSEssenceViewController () <UIScrollViewDelegate>
 /**头部标题栏*/
@@ -166,25 +162,29 @@
 
 /**初始化子控制器*/
 - (void)setupAllChildViewController {
-    
-    BSEssenceWordController *word = [[BSEssenceWordController alloc] init];
-    word.title = @"段子";
-    [self addChildViewController:word];
-    
-    BSEssenceAllController *all = [[BSEssenceAllController alloc] init];
+     BSTopicsTableViewController *all = [[BSTopicsTableViewController alloc] init];
     all.title = @"全部";
+    all.topicsType = SFTopicTypeAll;
     [self addChildViewController:all];
     
-    BSEssenceVideoController *video = [[BSEssenceVideoController alloc] init];
+    BSTopicsTableViewController *word = [[BSTopicsTableViewController alloc] init];
+    word.title = @"段子";
+    word.topicsType = SFTopicTypeWord;
+    [self addChildViewController:word];
+    
+    BSTopicsTableViewController *video = [[BSTopicsTableViewController alloc] init];
     video.title = @"视频";
+    video.topicsType = SFTopicTypeVideo;
     [self addChildViewController:video];
     
-    BSEssenceImageController *image = [[BSEssenceImageController alloc] init];
+    BSTopicsTableViewController *image = [[BSTopicsTableViewController alloc] init];
     image.title = @"图片";
+    image.topicsType = SFTopicTypeImage;
     [self addChildViewController:image];
     
-    BSEssenceVoiceController *voice = [[BSEssenceVoiceController alloc] init];
+    BSTopicsTableViewController *voice = [[BSTopicsTableViewController alloc] init];
     voice.title = @"声音";
+    voice.topicsType = SFTopicTypeVoice;
     [self addChildViewController:voice];
     
     
