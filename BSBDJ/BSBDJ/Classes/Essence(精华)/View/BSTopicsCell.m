@@ -8,6 +8,7 @@
 
 #import "BSTopicsCell.h"
 #import "BSTopicsItem.h"
+#import "BSTopicsImageView.m"
 
 @interface BSTopicsCell ()
 
@@ -29,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sina_v;
 
 @property (weak, nonatomic) IBOutlet UILabel *text_lable;
+
+/** 图片帖子中间的内容 */
+@property (nonatomic, weak) BSTopicsImageView *pictureView;
 
 
 @end
@@ -98,6 +102,12 @@
     
     // 设置文字
     self.text_lable.text = topicsItem.text;
+    
+    // 根据模型数据添加相应的内容到cell上
+    if (topicsItem.type == SFTopicTypeImage) { // 图片帖子
+        self.pictureView.topicItem = topicsItem;
+        
+    }
 }
 
 - (void)setupButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder
@@ -116,6 +126,15 @@
         placeholder = [NSString stringWithFormat:@"%zd", count];
     }
     [button setTitle:placeholder forState:UIControlStateNormal];
+}
+
+- (BSTopicsImageView *)pictureView {
+    if (!_pictureView) {
+        _pictureView = [BSTopicsImageView pictureView];
+        [self.contentView addSubview:self.pictureView];
+    }
+    
+    return _pictureView;
 }
 
 @end

@@ -16,6 +16,15 @@
     CGFloat _cellHeight;
 }
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+
+    return @{
+             @"small_image" : @"image0",
+             @"large_image" : @"image1",
+             @"middle_image" : @"image2"
+             };
+}
+
 - (NSString *)create_time {
     
     // 日期格式化类
@@ -54,17 +63,22 @@
 - (CGFloat)cellHeight {
 
     if (!_cellHeight) {
-    // 文字的y值
-    CGFloat textY = 55;
+        
     // 过期了
     //    [topics.text sizeWithFont:<#(UIFont *)#> constrainedToSize:<#(CGSize)#>]
     CGFloat textH = [self.text boundingRectWithSize:CGSizeMake(SFScreenWidth - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:13]} context:nil].size.height;
     
     // cell的高度
-    _cellHeight = SFTopicCellTextY + textH + SFTopicCellBottomBarH + 2 * SFTopicCellMargin;
+        _cellHeight = SFTopicCellTextY + textH + SFTopicCellBottomBarH + 2 * SFTopicCellMargin;
+        
+        // 根据段子类型来计算高度
+        if (self.type == SFTopicTypeImage) { // 图片
+            _cellHeight += self.height;
+        }
     
     }
     return _cellHeight;
 }
+
 
 @end

@@ -22,6 +22,8 @@
 		044939321D83F0870058677B /* BSTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044939301D83F0870058677B /* BSTopicsCell.xib */; };
 		044939381D8531EE0058677B /* NSDate+SFDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044939371D8531EE0058677B /* NSDate+SFDate.m */; };
 		0449393B1D854F720058677B /* BSTopicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449393A1D854F720058677B /* BSTopicsTableViewController.m */; };
+		044939431D864C420058677B /* BSTopicsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044939421D864C420058677B /* BSTopicsImageView.m */; };
+		044939451D864C580058677B /* BSTopicsImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044939441D864C580058677B /* BSTopicsImageView.xib */; };
 		04DE58FE1D717D88003F44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE58FD1D717D88003F44F1 /* main.m */; };
 		04DE59011D717D88003F44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE59001D717D88003F44F1 /* AppDelegate.m */; };
 		04DE59091D717D88003F44F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE59081D717D88003F44F1 /* Assets.xcassets */; };
@@ -101,6 +103,9 @@
 		044939371D8531EE0058677B /* NSDate+SFDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SFDate.m"; sourceTree = "<group>"; };
 		044939391D854F720058677B /* BSTopicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTopicsTableViewController.h; sourceTree = "<group>"; };
 		0449393A1D854F720058677B /* BSTopicsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTopicsTableViewController.m; sourceTree = "<group>"; };
+		044939411D864C420058677B /* BSTopicsImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTopicsImageView.h; sourceTree = "<group>"; };
+		044939421D864C420058677B /* BSTopicsImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTopicsImageView.m; sourceTree = "<group>"; };
+		044939441D864C580058677B /* BSTopicsImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTopicsImageView.xib; sourceTree = "<group>"; };
 		04DE58F91D717D87003F44F1 /* BSBDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE58FD1D717D88003F44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DE58FF1D717D88003F44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -314,6 +319,9 @@
 				0449392E1D83F0870058677B /* BSTopicsCell.h */,
 				0449392F1D83F0870058677B /* BSTopicsCell.m */,
 				044939301D83F0870058677B /* BSTopicsCell.xib */,
+				044939411D864C420058677B /* BSTopicsImageView.h */,
+				044939421D864C420058677B /* BSTopicsImageView.m */,
+				044939441D864C580058677B /* BSTopicsImageView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -741,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044939321D83F0870058677B /* BSTopicsCell.xib in Resources */,
+				044939451D864C580058677B /* BSTopicsImageView.xib in Resources */,
 				04DE59CB1D7294C2003F44F1 /* BSFriendTrendsViewController.xib in Resources */,
 				04DE59F91D72C857003F44F1 /* BSRecommendController.xib in Resources */,
 				04DE5A061D73D13F003F44F1 /* BSUserTableViewCell.xib in Resources */,
@@ -915,6 +924,7 @@
 				0449392D1D8312090058677B /* BSConst.m in Sources */,
 				04DE59EB1D72AB6C003F44F1 /* UIView+Toast.m in Sources */,
 				04DE59C91D729465003F44F1 /* BSNavViewController.m in Sources */,
+				044939431D864C420058677B /* BSTopicsImageView.m in Sources */,
 				04DE5A091D73D413003F44F1 /* BSUserItem.m in Sources */,
 				0411D5361D75D16E0052A5D7 /* BSEssenceRecommendTagsController.m in Sources */,
 				044939311D83F0870058677B /* BSTopicsCell.m in Sources */,

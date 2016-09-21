@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, SFTopicType) {
-    SFTopicTypeAll = 1,
-    SFTopicTypeImage = 10,
-    SFTopicTypeWord = 29,
-    SFTopicTypeVoice = 31,
-    SFTopicTypeVideo = 41
-};
+
 
 @interface BSTopicsTableViewController : UITableViewController
 
